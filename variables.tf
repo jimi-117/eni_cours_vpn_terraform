@@ -52,3 +52,27 @@ variable "vpn_gateway_name" {
   type        = string
   default     = "vgw-lab2-frc-001"
 }
+
+variable "onprem_gateway_address" {
+  description = "Public IP address of the on-premises VPN gateway"
+  type        = string
+  default     = "37.157.229.55"
+}
+
+variable "onprem_address_space" {
+  description = "Address space behind the on-premises VPN gateway"
+  type        = list(string)
+  default     = ["10.10.10.0/24"]
+}
+
+variable "local_network_gateway_name" {
+  description = "Azure Local Network Gateway name"
+  type        = string
+  default     = "lng-lab2-site-a-001"
+}
+
+variable "vpn_shared_key" {
+  description = "Shared pre-shared key for the IPsec tunnel"
+  type        = string
+  sensitive   = true
+}
