@@ -56,7 +56,6 @@ variable "vpn_gateway_name" {
 variable "onprem_gateway_address" {
   description = "Public IP address of the on-premises VPN gateway"
   type        = string
-  default     = "37.157.229.55"
 }
 
 variable "onprem_address_space" {
@@ -98,4 +97,9 @@ variable "server_b_vm_size" {
   description = "Server-B virtual machine size"
   type        = string
   default     = "Standard_B1s"
+}
+
+variable "admin_ssh_public_key" {
+  description = "SSH public key for the Server-B administrator"
+  type        = string
 }

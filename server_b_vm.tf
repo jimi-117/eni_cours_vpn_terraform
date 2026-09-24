@@ -14,7 +14,7 @@ resource "azurerm_linux_virtual_machine" "server_b" {
 
   admin_ssh_key {
     username   = "azureuser"
-    public_key = file("~/.ssh/id_ed25519.pub")
+    public_key = var.admin_ssh_public_key
   }
 
   source_image_reference {
