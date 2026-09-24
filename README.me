@@ -1,0 +1,114 @@
+# Azure Site-to-Site VPN with Terraform
+
+This repository contains a Terraform configuration for building a Site-to-Site VPN lab on Microsoft Azure.
+
+The project is based on a networking lab and was created as part of my cloud and infrastructure training.
+
+## Architecture
+
+The lab connects an on-premises network to an Azure virtual network through an IPsec/IKEv2 Site-to-Site VPN.
+
+```text
+On-Premises
+10.10.10.0/24
+      |
+   ROUTER01
+      |
+   IPsec / IKEv2
+      |
+Azure VPN Gateway
+      |
+10.20.20.0/24
+      |
+   Server-B
+10.20.20.20
+```
+
+## Main Components
+
+- Azure Virtual Network
+- Azure VPN Gateway
+- Azure Local Network Gateway
+- IPsec Site-to-Site VPN connection
+- Azure Network Interface
+- Debian Linux virtual machine
+- Terraform
+- AzureRM Provider
+
+## Technologies
+
+- Terraform
+- Microsoft Azure
+- AzureRM Provider
+- IPsec / IKEv2
+- strongSwan
+- Debian Linux
+- nginx
+
+## Project Structure
+
+| File | Description |
+|---|---|
+| `network.tf` | Azure virtual network and subnets |
+| `public_ip.tf` | Public IP address for the VPN Gateway |
+| `vpn_gateway.tf` | Azure VPN Gateway |
+| `local_network_gateway.tf` | On-premises network definition |
+| `vpn_connection.tf` | Site-to-Site VPN connection |
+| `server_b_nic.tf` | Network interface for Server-B |
+| `server_b_vm.tf` | Server-B virtual machine |
+| `variables.tf` | Terraform variables |
+| `locals.tf` | Common local values |
+| `provider.tf` | Azure provider configuration |
+| `versions.tf` | Terraform and provider version constraints |
+| `data.tf` | Azure resource group data source |
+
+## Security
+
+Sensitive values such as the VPN pre-shared key are provided through environment variables and are not committed to the repository.
+
+Example:
+
+```bash
+export TF_VAR_vpn_shared_key='CHANGE_ME'
+```
+
+The `.env` file is excluded from Git.
+
+## Usage
+
+Initialize Terraform:
+
+```bash
+terraform init
+```
+
+Check the configuration:
+
+```bash
+terraform validate
+```
+
+Review the execution plan:
+
+```bash
+terraform plan
+```
+
+Apply the configuration:
+
+```bash
+terraform apply
+```
+
+## Purpose
+
+The main purpose of this project is to practice:
+
+- Infrastructure as Code with Terraform
+- Azure networking
+- Site-to-Site VPN configuration
+- IPsec/IKEv2 concepts
+- Linux network routing
+- Cloud infrastructure troubleshooting
+
+This repository is primarily a learning and lab project.

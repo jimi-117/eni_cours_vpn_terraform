@@ -56,7 +56,6 @@ variable "vpn_gateway_name" {
 variable "onprem_gateway_address" {
   description = "Public IP address of the on-premises VPN gateway"
   type        = string
-  default     = "37.157.229.55"
 }
 
 variable "onprem_address_space" {
