@@ -93,3 +93,9 @@ variable "server_b_private_ip" {
   type        = string
   default     = "10.20.20.20"
 }
+
+variable "server_b_vm_size" {
+  description = "Server-B virtual machine size"
+  type        = string
+  default     = "Standard_B1s"
+}
