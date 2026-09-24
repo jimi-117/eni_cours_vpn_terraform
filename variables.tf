@@ -98,3 +98,8 @@ variable "server_b_vm_size" {
   type        = string
   default     = "Standard_B1s"
 }
+
+variable "admin_ssh_public_key" {
+  description = "SSH public key for the Server-B administrator"
+  type        = string
+}
