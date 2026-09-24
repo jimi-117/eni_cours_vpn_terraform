@@ -81,3 +81,15 @@ variable "vpn_connection_name" {
   type        = string
   default     = "conn-lab2-site-a-001"
 }
+
+variable "server_b_nic_name" {
+  description = "Server-B network interface name"
+  type        = string
+  default     = "nic-lab2-serverb-001"
+}
+
+variable "server_b_private_ip" {
+  description = "Server-B private IP address"
+  type        = string
+  default     = "10.20.20.20"
+}
