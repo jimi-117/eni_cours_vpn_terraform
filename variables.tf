@@ -76,3 +76,8 @@ variable "vpn_shared_key" {
   type        = string
   sensitive   = true
 }
+variable "vpn_connection_name" {
+  description = "Site-to-site VPN connection name"
+  type        = string
+  default     = "conn-lab2-site-a-001"
+}
